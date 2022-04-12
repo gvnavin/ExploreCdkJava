@@ -1,0 +1,8 @@
+build
+*.iml
+.idea/
+.DS_Store
+cdk.out
+target
+software/ExploreCdkService/build
+software/ExploreCdkService/.gradle

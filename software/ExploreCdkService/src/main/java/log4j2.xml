@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copied from: http://docs.aws.amazon.com/lambda/latest/dg/java-logging.html#java-wt-logging-using-log4j2.8 -->
+<Configuration status="INFO" packages="com.amazonaws.services.lambda.runtime.log4j2">
+    <Appenders>
+        <Lambda name="Lambda">
+            <PatternLayout>
+                <pattern>%d{dd MMM yyyy HH:mm:ss,SSS} [%p] &lt;%X{AWSRequestId}&gt; (%t) %c:%L: %m%n</pattern>
+            </PatternLayout>
+        </Lambda>
+    </Appenders>
+    <Loggers>
+        <Root level="DEBUG"> <!-- Todo: Change it back to INFO once Service gets launched & stabilized in Prod -->
+            <AppenderRef ref="Lambda"/>
+        </Root>
+    </Loggers>
+</Configuration>
